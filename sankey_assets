@@ -1,0 +1,3 @@
+	1. require(igraph)
+	2. require(rCharts)
+	3. g <- graph.tree(40, children = 4)
