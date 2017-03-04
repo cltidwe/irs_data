@@ -1,0 +1,115 @@
+dat <- read.csv( "https://www.irs.gov/pub/irs-soi/15eofinextractEZ.dat", sep=" ", skip=1 )
+raw.names <- readLines( "https://www.irs.gov/pub/irs-soi/15eofinextractEZ.dat", n=1 )
+n2 <- strsplit( raw.names, " ")[[1]]
+names( dat ) <- n2
+head( dat )
+
+> dat <- read.csv( "https://www.irs.gov/pub/irs-soi/15eofinextractEZ.dat", sep=" ", skip=1 )
+> raw.names <- readLines( "https://www.irs.gov/pub/irs-soi/15eofinextractEZ.dat", n=1 )
+> 
+> n2 <- strsplit( raw.names, " ")[[1]]
+> names( dat ) <- n2
+> head( dat )
+  elf       EIN a_tax_prd subseccd totcntrbs prgmservrev duesassesmnts othrinvstinc
+1   P 221739910    201312        3         0       12000             0            0
+2   P 221739910    201412        3         0       15511             0            0
+3   E 362903290    201412       25         0           0             0         3950
+4   P 680041276    201412        3     41008           0             0            0
+5   E 464049491    201412        3         0           0             0            0
+6   E 271389216    201412        4         0           0             0         1623
+  grsamtsalesastothr basisalesexpnsothr gnsaleofastothr grsincgaming grsrevnuefndrsng
+1                  0                  0               0            0                0
+2                  0                  0               0            0                0
+3                  0                  0               0            0                0
+4                  0                  0               0            0                0
+5                  0                  0               0            0                0
+6                  0                  0               0            0                0
+  direxpns netincfndrsng grsalesminusret costgoodsold grsprft othrevnue totrevnue
+1        0             0               0            0       0       935     12935
+2        0             0               0            0       0         0     15511
+3        0             0               0            0       0         0      3950
+4        0             0               0            0       0         0     41008
+5        0             0               0            0       0         0         0
+6        0             0               0            0       0         0      1623
+  totexpns totexcessyr othrchgsnetassetfnd networthend totassetsend totliabend
+1     3350        9585                   0   -17345013        77664   17422677
+2     7714        7797                 -20   -17337217        38240   17375457
+3    81324      -77374                   0   -11059778         1089   11060867
+4    35015        5993                -500    -9228242         5993    9349044
+5  5695929    -5695929                   0    -8905257       148301    9053558
+6   552909     -551286            -7200996    -7752133          149    7752282
+  totnetassetsend actvtynotprevrptcd chngsinorgcd unrelbusincd filedf990tcd
+1       -17345013                  N            N            N            N
+2       -17337217                  N            N            N            N
+3       -11059778                  N            N            N            N
+4        -9343051                  N            N            N            N
+5        -8905257                  N            N            N            N
+6        -7752133                  N            N            N            N
+  contractioncd politicalexpend filedfYYN0polcd loanstoofficerscd loanstoofficers
+1             N               0               N                 N               0
+2             N               0               N                 N               0
+3             N               0               N                 N               0
+4             N               0               N                 N               0
+5             N               0               N                 N               0
+6             N               0               N                 N               0
+  initiationfee grspublicrcpts s4958excessbenefcd prohibtdtxshltrcd nonpfrea
+1             0              0                  N                 N        3
+2             0              0                  N                 N        3
+3             0              0                  N                 N        0
+4             0              0                  N                 N        7
+5             0              0                  N                 N       12
+6             0              0                  N                 N        0
+  totnoforgscnt totsupport gftgrntrcvd170 txrevnuelevied170 srvcsval170
+1             0          0              0                 0           0
+2             0          0              0                 0           0
+3             0          0              0                 0           0
+4             0          0         200593                 0           0
+5             1          0              0                 0           0
+6             0          0              0                 0           0
+  pubsuppsubtot170 excds2pct170 pubsupplesspct170 samepubsuppsubtot170 grsinc170
+1                0            0                 0                    0         0
+2                0            0                 0                    0         0
+3                0            0                 0                    0         0
+4           200593         5159            195434               200593         0
+5                0            0                 0                    0         0
+6                0            0                 0                    0         0
+  netincunrelatd170 othrinc170 totsupport170 grsrcptsrelatd170 totgftgrntrcvd509
+1                 0          0             0                 0                 0
+2                 0          0             0                 0                 0
+3                 0          0             0                 0                 0
+4                 0          0        200593                 0                 0
+5                 0          0             0                 0                 0
+6                 0          0             0                 0                 0
+  grsrcptsadmiss509 grsrcptsactvts509 txrevnuelevied509 srvcsval509 pubsuppsubtot509
+1                 0                 0                 0           0                0
+2                 0                 0                 0           0                0
+3                 0                 0                 0           0                0
+4                 0                 0                 0           0                0
+5                 0                 0                 0           0                0
+6                 0                 0                 0           0                0
+  rcvdfrmdisqualsub509 excds1pct509 subtotpub509 pubsupplesssub509 samepubsuppsubtot509
+1                    0            0            0                 0                    0
+2                    0            0            0                 0                    0
+3                    0            0            0                 0                    0
+4                    0            0            0                 0                    0
+5                    0            0            0                 0                    0
+6                    0            0            0                 0                    0
+  grsinc509 unreltxincls511tx509 subtotsuppinc509 netincunreltd509 othrinc509
+1         0                    0                0                0          0
+2         0                    0                0                0          0
+3         0                    0                0                0          0
+4         0                    0                0                0          0
+5         0                    0                0                0          0
+6         0                    0                0                0          0
+  totsupp509
+1          0
+2          0
+3          0
+4          0
+5          0
+6          0
+> dat <- read.csv( "py14_EZ.dat", sep=" ", skip=1 )
+> 
+> raw.names <- readLines( "py14_EZ.dat", n=1 )
+> 
+
